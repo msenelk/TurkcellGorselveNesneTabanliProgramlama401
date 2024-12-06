@@ -16,5 +16,23 @@ namespace TurkcellGorselveNesneTabanliProgramlama401
         {
             InitializeComponent();
         }
+
+        DbUrunEntities db = new DbUrunEntities();
+        private void btnListele_Click(object sender, EventArgs e)
+        {
+            // dataGridView1.DataSource=db.TblUrunler.ToList(); -- İstemediğimiz tüm bilgiler geldiği için aşağıdaki kodu uyguluyoruz.
+
+            var degerler = from x in db.TblUrunler
+                           select new
+                           {
+                               x.UrunId,
+                               x.UrunAd,
+                               x.Stok,
+                               x.AlisFiyat,
+                               x.SatisFiyat,
+                               x.TblKategori.Ad
+                           };
+            dataGridView1.DataSource = degerler.ToList();
+        }
     }
 }
