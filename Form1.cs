@@ -16,10 +16,10 @@ namespace TurkcellGorselveNesneTabanliProgramlama401
         {
             InitializeComponent();
         }
-
-        private void Form1_Load(object sender, EventArgs e)
+        DbUrunEntities db=new DbUrunEntities();
+         private void button1_Click(object sender, EventArgs e)
         {
-
+            dataGridView1.DataSource = db.TblMusteri.ToList();
         }
     }
 }
