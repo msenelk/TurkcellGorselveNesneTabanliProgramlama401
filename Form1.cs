@@ -19,7 +19,17 @@ namespace TurkcellGorselveNesneTabanliProgramlama401
         DbUrunEntities db=new DbUrunEntities();
          private void button1_Click(object sender, EventArgs e)
         {
-            dataGridView1.DataSource = db.TblMusteri.ToList();
+            // dataGridView1.DataSource = db.TblMusteri.ToList();
+            var degerler = from x in db.TblMusteri
+                           select new
+                           {
+                               x.MusteriID,
+                               x.Ad,
+                               x.Soyad,
+                               x.Sehir,
+                               x.Bakiye
+                           };
+            dataGridView1.DataSource = degerler.ToList();
         }
 
         private void btnKaydet_Click(object sender, EventArgs e)
