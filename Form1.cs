@@ -33,5 +33,14 @@ namespace TurkcellGorselveNesneTabanliProgramlama401
             db.SaveChanges();
             MessageBox.Show("Yeni Müşteri Kaydı Yapıldı");
         }
+
+        private void btnSil_Click(object sender, EventArgs e)
+        {
+            int id = int.Parse(txtId.Text);
+            var x=db.TblMusteri.Find(id);
+            db.TblMusteri.Remove(x);
+            db.SaveChanges();
+            MessageBox.Show("Müşteri Sistemden Silindi.");
+        }
     }
 }

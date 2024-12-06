@@ -41,6 +41,7 @@
             this.txtSoyad = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.btnKaydet = new System.Windows.Forms.Button();
+            this.btnSil = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -154,11 +155,22 @@
             this.btnKaydet.UseVisualStyleBackColor = true;
             this.btnKaydet.Click += new System.EventHandler(this.btnKaydet_Click);
             // 
+            // btnSil
+            // 
+            this.btnSil.Location = new System.Drawing.Point(969, 334);
+            this.btnSil.Name = "btnSil";
+            this.btnSil.Size = new System.Drawing.Size(179, 50);
+            this.btnSil.TabIndex = 15;
+            this.btnSil.Text = "Sil";
+            this.btnSil.UseVisualStyleBackColor = true;
+            this.btnSil.Click += new System.EventHandler(this.btnSil_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1173, 408);
+            this.Controls.Add(this.btnSil);
             this.Controls.Add(this.btnKaydet);
             this.Controls.Add(this.txtSoyad);
             this.Controls.Add(this.label5);
@@ -197,6 +209,7 @@
         private System.Windows.Forms.TextBox txtSoyad;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button btnKaydet;
+        private System.Windows.Forms.Button btnSil;
     }
 }
 
