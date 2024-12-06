@@ -54,5 +54,31 @@ namespace TurkcellGorselveNesneTabanliProgramlama401
             db.SaveChanges();
             MessageBox.Show("Ürün başarılıyla eklendi.");
         }
+
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            txtId.Text = dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString();
+            txtUrunAd.Text = dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
+            txtStok.Text = dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString();
+            txtAlisFiyat.Text = dataGridView1.Rows[e.RowIndex].Cells[3].Value.ToString();
+            txtSatisFiyat.Text = dataGridView1.Rows[e.RowIndex].Cells[4].Value.ToString();
+            // txtUrunAd.Text = dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
+        }
+
+        private void btnSil_Click(object sender, EventArgs e)
+        {
+            if(txtId.Text!="")
+            {
+                int id=int.Parse(txtId.Text);
+                var x = db.TblUrunler.Find(id);
+                db.TblUrunler.Remove(x);
+                db.SaveChanges();
+                MessageBox.Show("Ürün başarılı bir şekilde silindi", "Silme İşlemi", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+            }
+            else
+            {
+                MessageBox.Show("Lütfen verileri listeledikten sonra bir satıra tıklayıp silmek istediğiniz kaydı seçiniz.", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
     }
 }
