@@ -21,5 +21,17 @@ namespace TurkcellGorselveNesneTabanliProgramlama401
         {
             dataGridView1.DataSource = db.TblMusteri.ToList();
         }
+
+        private void btnKaydet_Click(object sender, EventArgs e)
+        {
+            TblMusteri t=new TblMusteri();
+            t.Ad = txtAd.Text;
+            t.Bakiye = decimal.Parse(txtBakiye.Text);
+            t.Sehir = txtSehir.Text;
+            t.Soyad = txtSoyad.Text;
+            db.TblMusteri.Add(t);
+            db.SaveChanges();
+            MessageBox.Show("Yeni Müşteri Kaydı Yapıldı");
+        }
     }
 }

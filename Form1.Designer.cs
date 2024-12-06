@@ -30,16 +30,17 @@
         {
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.button1 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtId = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtAd = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtBakiye = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.txtSehir = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.txtSoyad = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
+            this.btnKaydet = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -63,12 +64,12 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // textBox1
+            // txtId
             // 
-            this.textBox1.Location = new System.Drawing.Point(969, 32);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(179, 30);
-            this.textBox1.TabIndex = 5;
+            this.txtId.Location = new System.Drawing.Point(969, 32);
+            this.txtId.Name = "txtId";
+            this.txtId.Size = new System.Drawing.Size(179, 30);
+            this.txtId.TabIndex = 5;
             // 
             // label1
             // 
@@ -79,12 +80,12 @@
             this.label1.TabIndex = 4;
             this.label1.Text = "ID:";
             // 
-            // textBox2
+            // txtAd
             // 
-            this.textBox2.Location = new System.Drawing.Point(969, 68);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(179, 30);
-            this.textBox2.TabIndex = 7;
+            this.txtAd.Location = new System.Drawing.Point(969, 68);
+            this.txtAd.Name = "txtAd";
+            this.txtAd.Size = new System.Drawing.Size(179, 30);
+            this.txtAd.TabIndex = 7;
             // 
             // label2
             // 
@@ -95,12 +96,12 @@
             this.label2.TabIndex = 6;
             this.label2.Text = "Ad:";
             // 
-            // textBox3
+            // txtBakiye
             // 
-            this.textBox3.Location = new System.Drawing.Point(969, 186);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(179, 30);
-            this.textBox3.TabIndex = 9;
+            this.txtBakiye.Location = new System.Drawing.Point(969, 186);
+            this.txtBakiye.Name = "txtBakiye";
+            this.txtBakiye.Size = new System.Drawing.Size(179, 30);
+            this.txtBakiye.TabIndex = 9;
             // 
             // label3
             // 
@@ -111,12 +112,12 @@
             this.label3.TabIndex = 8;
             this.label3.Text = "Bakiye:";
             // 
-            // textBox4
+            // txtSehir
             // 
-            this.textBox4.Location = new System.Drawing.Point(969, 148);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(179, 30);
-            this.textBox4.TabIndex = 11;
+            this.txtSehir.Location = new System.Drawing.Point(969, 148);
+            this.txtSehir.Name = "txtSehir";
+            this.txtSehir.Size = new System.Drawing.Size(179, 30);
+            this.txtSehir.TabIndex = 11;
             // 
             // label4
             // 
@@ -127,12 +128,12 @@
             this.label4.TabIndex = 10;
             this.label4.Text = "Şehir:";
             // 
-            // textBox5
+            // txtSoyad
             // 
-            this.textBox5.Location = new System.Drawing.Point(969, 109);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(179, 30);
-            this.textBox5.TabIndex = 13;
+            this.txtSoyad.Location = new System.Drawing.Point(969, 109);
+            this.txtSoyad.Name = "txtSoyad";
+            this.txtSoyad.Size = new System.Drawing.Size(179, 30);
+            this.txtSoyad.TabIndex = 13;
             // 
             // label5
             // 
@@ -143,20 +144,31 @@
             this.label5.TabIndex = 12;
             this.label5.Text = "Soyad:";
             // 
+            // btnKaydet
+            // 
+            this.btnKaydet.Location = new System.Drawing.Point(969, 278);
+            this.btnKaydet.Name = "btnKaydet";
+            this.btnKaydet.Size = new System.Drawing.Size(179, 50);
+            this.btnKaydet.TabIndex = 14;
+            this.btnKaydet.Text = "Kaydet";
+            this.btnKaydet.UseVisualStyleBackColor = true;
+            this.btnKaydet.Click += new System.EventHandler(this.btnKaydet_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1173, 408);
-            this.Controls.Add(this.textBox5);
+            this.Controls.Add(this.btnKaydet);
+            this.Controls.Add(this.txtSoyad);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.txtSehir);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.txtBakiye);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.txtAd);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtId);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.dataGridView1);
@@ -174,16 +186,17 @@
 
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtId;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtAd;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtBakiye;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox txtSehir;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox txtSoyad;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button btnKaydet;
     }
 }
 
