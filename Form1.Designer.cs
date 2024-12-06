@@ -42,6 +42,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.btnKaydet = new System.Windows.Forms.Button();
             this.btnSil = new System.Windows.Forms.Button();
+            this.btnGuncelle = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -52,7 +53,7 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(881, 408);
+            this.dataGridView1.Size = new System.Drawing.Size(881, 446);
             this.dataGridView1.TabIndex = 0;
             // 
             // button1
@@ -165,11 +166,22 @@
             this.btnSil.UseVisualStyleBackColor = true;
             this.btnSil.Click += new System.EventHandler(this.btnSil_Click);
             // 
+            // btnGuncelle
+            // 
+            this.btnGuncelle.Location = new System.Drawing.Point(969, 396);
+            this.btnGuncelle.Name = "btnGuncelle";
+            this.btnGuncelle.Size = new System.Drawing.Size(179, 50);
+            this.btnGuncelle.TabIndex = 16;
+            this.btnGuncelle.Text = "Güncelle";
+            this.btnGuncelle.UseVisualStyleBackColor = true;
+            this.btnGuncelle.Click += new System.EventHandler(this.btnGuncelle_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1173, 408);
+            this.ClientSize = new System.Drawing.Size(1174, 458);
+            this.Controls.Add(this.btnGuncelle);
             this.Controls.Add(this.btnSil);
             this.Controls.Add(this.btnKaydet);
             this.Controls.Add(this.txtSoyad);
@@ -210,6 +222,7 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button btnKaydet;
         private System.Windows.Forms.Button btnSil;
+        private System.Windows.Forms.Button btnGuncelle;
     }
 }
 

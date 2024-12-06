@@ -42,5 +42,17 @@ namespace TurkcellGorselveNesneTabanliProgramlama401
             db.SaveChanges();
             MessageBox.Show("Müşteri Sistemden Silindi.");
         }
+
+        private void btnGuncelle_Click(object sender, EventArgs e)
+        {
+            int id = int.Parse(txtId.Text);
+            var x = db.TblMusteri.Find(id);
+            x.Ad = txtAd.Text;
+            x.Soyad=txtSoyad.Text;
+            x.Sehir=txtSehir.Text;
+            x.Bakiye=decimal.Parse(txtBakiye.Text);
+            db.SaveChanges();
+            MessageBox.Show("Müşteri bilgileri güncellendi.");
+        }
     }
 }
