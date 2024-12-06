@@ -41,5 +41,18 @@ namespace TurkcellGorselveNesneTabanliProgramlama401
             cmbKategori.ValueMember = "ID"; // Arka planda ID çalışacak
             cmbKategori.DisplayMember = "Ad"; // Burası da kullanıcıya gösterilecek kısım.
         }
+
+        private void btnKaydet_Click(object sender, EventArgs e)
+        {
+            TblUrunler t = new TblUrunler();
+            t.UrunAd = txtUrunAd.Text;
+            t.Stok = short.Parse(txtStok.Text);
+            t.AlisFiyat = decimal.Parse(txtAlisFiyat.Text);
+            t.SatisFiyat = decimal.Parse(txtSatisFiyat.Text);
+            t.Kategori = int.Parse(cmbKategori.SelectedValue.ToString());
+            db.TblUrunler.Add(t);
+            db.SaveChanges();
+            MessageBox.Show("Ürün başarılıyla eklendi.");
+        }
     }
 }
