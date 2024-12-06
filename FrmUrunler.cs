@@ -34,5 +34,12 @@ namespace TurkcellGorselveNesneTabanliProgramlama401
                            };
             dataGridView1.DataSource = degerler.ToList();
         }
+
+        private void FrmUrunler_Load(object sender, EventArgs e)
+        {
+            cmbKategori.DataSource = db.TblKategori.ToList();
+            cmbKategori.ValueMember = "ID"; // Arka planda ID çalışacak
+            cmbKategori.DisplayMember = "Ad"; // Burası da kullanıcıya gösterilecek kısım.
+        }
     }
 }
