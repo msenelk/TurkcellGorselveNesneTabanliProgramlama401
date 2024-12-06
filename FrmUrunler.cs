@@ -18,10 +18,8 @@ namespace TurkcellGorselveNesneTabanliProgramlama401
         }
 
         DbUrunEntities db = new DbUrunEntities();
-        private void btnListele_Click(object sender, EventArgs e)
+        void Listele()
         {
-            // dataGridView1.DataSource=db.TblUrunler.ToList(); -- İstemediğimiz tüm bilgiler geldiği için aşağıdaki kodu uyguluyoruz.
-
             var degerler = from x in db.TblUrunler
                            select new
                            {
@@ -35,11 +33,27 @@ namespace TurkcellGorselveNesneTabanliProgramlama401
             dataGridView1.DataSource = degerler.ToList();
         }
 
+        void Temizle()
+        {
+            txtAlisFiyat.Text = "";
+            txtId.Text = "";
+            txtSatisFiyat.Text = "";
+            txtStok.Text = "";
+            txtUrunAd.Text = "";
+        }
+        private void btnListele_Click(object sender, EventArgs e)
+        {
+            // dataGridView1.DataSource=db.TblUrunler.ToList(); -- İstemediğimiz tüm bilgiler geldiği için aşağıdaki kodu uyguluyoruz.
+
+            Listele();
+        }
+
         private void FrmUrunler_Load(object sender, EventArgs e)
         {
             cmbKategori.DataSource = db.TblKategori.ToList();
             cmbKategori.ValueMember = "ID"; // Arka planda ID çalışacak
             cmbKategori.DisplayMember = "Ad"; // Burası da kullanıcıya gösterilecek kısım.
+            Listele();
         }
 
         private void btnKaydet_Click(object sender, EventArgs e)
@@ -53,6 +67,7 @@ namespace TurkcellGorselveNesneTabanliProgramlama401
             db.TblUrunler.Add(t);
             db.SaveChanges();
             MessageBox.Show("Ürün başarılıyla eklendi.");
+            Temizle();
         }
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -62,7 +77,7 @@ namespace TurkcellGorselveNesneTabanliProgramlama401
             txtStok.Text = dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString();
             txtAlisFiyat.Text = dataGridView1.Rows[e.RowIndex].Cells[3].Value.ToString();
             txtSatisFiyat.Text = dataGridView1.Rows[e.RowIndex].Cells[4].Value.ToString();
-            // txtUrunAd.Text = dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
+            //cmbKategori.SelectedValue= dataGridView1.Rows[e.RowIndex].Cells[5].Value.ToString();
         }
 
         private void btnSil_Click(object sender, EventArgs e)
@@ -79,6 +94,21 @@ namespace TurkcellGorselveNesneTabanliProgramlama401
             {
                 MessageBox.Show("Lütfen verileri listeledikten sonra bir satıra tıklayıp silmek istediğiniz kaydı seçiniz.", "Uyarı", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+            Listele();
+        }
+
+        private void btnGuncelle_Click(object sender, EventArgs e)
+        {
+            int id = int.Parse(txtId.Text);
+            var x = db.TblUrunler.Find(id);
+            x.UrunAd = txtUrunAd.Text;
+            x.Stok = short.Parse(txtStok.Text);
+            x.AlisFiyat=decimal.Parse(txtAlisFiyat.Text);
+            x.SatisFiyat = decimal.Parse(txtSatisFiyat.Text);
+            x.Kategori=int.Parse(cmbKategori.SelectedValue.ToString());
+            db.SaveChanges();
+            MessageBox.Show("Verileriniz başarılı bir şekilde güncellendi","Güncelleme Bilgisi", MessageBoxButtons.OK,MessageBoxIcon.Information);
+            Listele();
         }
     }
 }
