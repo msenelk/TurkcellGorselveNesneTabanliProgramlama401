@@ -16,5 +16,12 @@ namespace TurkcellGorselveNesneTabanliProgramlama401
         {
             InitializeComponent();
         }
+        DbUrunEntities db=new DbUrunEntities();
+        private void FrmIstatistik_Load(object sender, EventArgs e)
+        {
+            lblMusteriSayisi.Text=db.TblMusteri.Count().ToString();
+            lblKategoriSayisi.Text=db.TblKategori.Count().ToString();
+            lblUrunSayisi.Text = db.TblUrunler.Count().ToString();
+        }
     }
 }
